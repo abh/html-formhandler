@@ -83,8 +83,10 @@ Each field can render itself with C<< $field->render >>.
 The name space used to look for the widget roles can be specified on a form or
 field basis by setting 'widget_name_space' to an arrayref of name spaces:
 
-   has '+widget_name_space' => ( default => sub { ['MyApp::Form::Submit',
-       'MyApp::Form::Widget' ]);
+   has '+widget_name_space' => (
+       default => sub {
+           ['MyApp::Form::Submit', 'MyApp::Form::Widget'];
+       });
 
 The HTML::FormHandler::Widget name space is always searched as the last name space.
 This means that you can set up an application or form specific set of widgets.
